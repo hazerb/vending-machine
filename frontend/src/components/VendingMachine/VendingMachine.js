@@ -149,7 +149,7 @@ const VendingMachine = () => {
                   </div>
                   <div className="product-quantity">Qty: {product.quantity}</div>
                   {insertedMoney >= product.price && product.quantity > 0 ? <button className="button button3" onClick={() => handleSelectProduct(product)}>Select</button> :
-                    <button className="button4" onClick={() => handleSelectProduct(product)}>{product.quantity == 0 ? 'Sold out' : 'Select'}</button>}
+                    <button className="button4" disabled={product.quantity === 0}>{product.quantity == 0 ? 'Sold out' : 'Select'}</button>}
                 </div>
               </li>
             ))}
